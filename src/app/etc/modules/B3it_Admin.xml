@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE config>
+<config>
+    <modules>
+        <B3it_Admin>
+            <active>true</active>
+            <codePool>local</codePool>
+        </B3it_Admin>
+    </modules>
+</config>

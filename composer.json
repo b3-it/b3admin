@@ -1,0 +1,17 @@
+{
+  "name": "b3it/admin",
+  "license": "OSL-3.0",
+  "type": "magento-module",
+  "version": "1.0.0",
+  "description": "Deactivate and activate Accounts",
+  "require": {
+    "magento-hackathon/magento-composer-installer": "^3.0.6"
+  },
+  "extra": {
+    "map": [
+      ["src/app/code/local/B3it/Admin", "app/code/local/B3it/Admin"],
+      ["src/app/etc/modules/B3it_Admin.xml", "app/etc/modules/B3it_Admin.xml"],
+      ["src/app/locale/de_DE/B3it/Admin.csv", "app/locale/de_DE/B3it/Admin.csv"]
+    ]
+  }
+}
