@@ -19,24 +19,25 @@ class B3it_Admin_Model_Resource_User extends Mage_Core_Model_Resource_Db_Abstrac
         $this->_init('admin/user', 'user_id');
     }
 
-    public function saveAttribute(Mage_Admin_Model_User $object, $field) {
-        return $this->saveAttributes($object, $field);
+    public function saveAttribute(Mage_Admin_Model_User $object, string $field): self
+    {
+        return $this->saveAttributes($object, [$field]);
     }
 
-    public function saveAttributes(Mage_Admin_Model_User $object, array $fields) {
-        $writeAdapter= $this->_getWriteAdapter();
-
-        if (!$fields || !$object) {
+    public function saveAttributes(Mage_Admin_Model_User $object, array $fields): self
+    {
+        if (empty($insertData)) {
+            return $this;
+        }
+        if (!$object->getId()) {
             return $this;
         }
 
-        $insertData = array();
-        if (!is_array($fields)) {
-            $fields = array($fields);
-        }
+        $writeAdapter = $this->_getWriteAdapter();
 
+        $insertData = [];
         foreach ($fields as $field) {
-            if (!$object->hasData($field) || !$object->getId()) {
+            if (!$object->hasData($field)) {
                 continue;
             }
             $insertData[$field] = $object->getData($field);
