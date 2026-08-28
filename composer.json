@@ -2,7 +2,6 @@
   "name": "b3it/admin",
   "license": "OSL-3.0",
   "type": "magento-module",
-  "version": "1.0.0",
   "description": "Deactivate and activate Accounts",
   "suggest": {
     "magento-hackathon/magento-composer-installer": "^3.1"
