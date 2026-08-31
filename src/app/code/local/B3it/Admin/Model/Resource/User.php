@@ -26,7 +26,7 @@ class B3it_Admin_Model_Resource_User extends Mage_Core_Model_Resource_Db_Abstrac
 
     public function saveAttributes(Mage_Admin_Model_User $object, array $fields): self
     {
-        if (empty($insertData)) {
+        if (empty($fields)) {
             return $this;
         }
         if (!$object->getId()) {
